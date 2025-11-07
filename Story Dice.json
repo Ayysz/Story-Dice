@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 236,
+    "build": 245,
     "major": 5,
     "minor": 5,
     "revision": 0
@@ -12,7 +12,7 @@
     "antialisingEnabledOnMobile": false,
     "folderProject": false,
     "orientation": "landscape",
-    "packageName": "com.example.gamename",
+    "packageName": "com.solu.story_dice",
     "pixelsRounding": false,
     "projectUuid": "674f96fe-34eb-4e44-9d86-85dec6faca87",
     "scaleMode": "linear",
@@ -24,7 +24,7 @@
     "author": "",
     "windowWidth": 1280,
     "windowHeight": 720,
-    "latestCompilationDirectory": "",
+    "latestCompilationDirectory": "D:\\Laragon\\GDevelop\\Story-Dice\\exports\\desktop",
     "maxFPS": 60,
     "minFPS": 20,
     "verticalSync": false,
@@ -70,12 +70,12 @@
       "progressBarMaxWidth": 200,
       "progressBarMinWidth": 40,
       "progressBarWidthPercent": 30,
-      "showGDevelopSplash": true,
+      "showGDevelopSplash": false,
       "showProgressBar": true
     },
     "watermark": {
       "placement": "bottom-left",
-      "showWatermark": true
+      "showWatermark": false
     },
     "authorIds": [],
     "authorUsernames": [],
@@ -1671,7 +1671,8 @@
         "gridAlpha": 0.8,
         "snap": false,
         "zoomFactor": 0.4789341884535254,
-        "windowMask": false
+        "windowMask": false,
+        "selectedLayer": ""
       },
       "objectsGroups": [],
       "variables": [],
@@ -2830,12 +2831,31 @@
                 },
                 {
                   "type": {
-                    "value": "Scene"
+                    "value": "PopUp::Alert"
                   },
                   "parameters": [
                     "",
-                    "\"Kredit\"",
+                    "\"MAAF FITUR INI SEDANG DIKEMBANGKAN\"",
                     ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "disabled": true,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Scene"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Kredit\"",
+                        ""
+                      ]
+                    }
                   ]
                 }
               ]
@@ -21161,12 +21181,27 @@
               "value": "Idle",
               "type": "Choice",
               "label": "State",
-              "extraInformation": [
-                "Idle",
-                "Hovered",
-                "PressedInside",
-                "PressedOutside",
-                "Validated"
+              "choices": [
+                {
+                  "label": "Idle",
+                  "value": "Idle"
+                },
+                {
+                  "label": "Hovered",
+                  "value": "Hovered"
+                },
+                {
+                  "label": "PressedInside",
+                  "value": "PressedInside"
+                },
+                {
+                  "label": "PressedOutside",
+                  "value": "PressedOutside"
+                },
+                {
+                  "label": "Validated",
+                  "value": "Validated"
+                }
               ],
               "hidden": true,
               "name": "State"
@@ -21705,6 +21740,7 @@
               "extraInformation": [
                 "ButtonStates::ButtonFSM"
               ],
+              "choices": [],
               "name": "ButtonFSM"
             },
             {
@@ -21714,6 +21750,7 @@
               "extraInformation": [
                 "EffectCapability::EffectBehavior"
               ],
+              "choices": [],
               "name": "Effect"
             },
             {
@@ -22153,6 +22190,7 @@
               "extraInformation": [
                 "AnimatableCapability::AnimatableBehavior"
               ],
+              "choices": [],
               "name": "Animation"
             },
             {
@@ -22162,6 +22200,7 @@
               "extraInformation": [
                 "ButtonStates::ButtonFSM"
               ],
+              "choices": [],
               "name": "ButtonFSM"
             },
             {
@@ -23555,6 +23594,7 @@
               "extraInformation": [
                 "ButtonStates::ButtonFSM"
               ],
+              "choices": [],
               "name": "ButtonFSM"
             },
             {
@@ -23564,6 +23604,7 @@
               "extraInformation": [
                 "EffectCapability::EffectBehavior"
               ],
+              "choices": [],
               "name": "Effect"
             },
             {
@@ -23608,40 +23649,139 @@
               "type": "Choice",
               "label": "Fade-in easing",
               "group": "Speed",
-              "extraInformation": [
-                "linear",
-                "easeInQuad",
-                "easeOutQuad",
-                "easeInOutQuad",
-                "easeInCubic",
-                "easeOutCubic",
-                "easeInOutCubic",
-                "easeInQuart",
-                "easeOutQuart",
-                "easeInOutQuart",
-                "easeInQuint",
-                "easeOutQuint",
-                "easeInOutQuint",
-                "easeInOutSine",
-                "easeInExpo",
-                "easeOutExpo",
-                "easeInOutExpo",
-                "easeInCirc",
-                "easeOutCirc",
-                "easeInOutCirc",
-                "easeOutBounce",
-                "easeInBack",
-                "easeOutBack",
-                "easeInOutBack",
-                "elastic",
-                "swingFromTo",
-                "swingFrom",
-                "swingTo",
-                "bounce",
-                "bouncePast",
-                "easeFromTo",
-                "easeFrom",
-                "easeTo"
+              "choices": [
+                {
+                  "label": "linear",
+                  "value": "linear"
+                },
+                {
+                  "label": "easeInQuad",
+                  "value": "easeInQuad"
+                },
+                {
+                  "label": "easeOutQuad",
+                  "value": "easeOutQuad"
+                },
+                {
+                  "label": "easeInOutQuad",
+                  "value": "easeInOutQuad"
+                },
+                {
+                  "label": "easeInCubic",
+                  "value": "easeInCubic"
+                },
+                {
+                  "label": "easeOutCubic",
+                  "value": "easeOutCubic"
+                },
+                {
+                  "label": "easeInOutCubic",
+                  "value": "easeInOutCubic"
+                },
+                {
+                  "label": "easeInQuart",
+                  "value": "easeInQuart"
+                },
+                {
+                  "label": "easeOutQuart",
+                  "value": "easeOutQuart"
+                },
+                {
+                  "label": "easeInOutQuart",
+                  "value": "easeInOutQuart"
+                },
+                {
+                  "label": "easeInQuint",
+                  "value": "easeInQuint"
+                },
+                {
+                  "label": "easeOutQuint",
+                  "value": "easeOutQuint"
+                },
+                {
+                  "label": "easeInOutQuint",
+                  "value": "easeInOutQuint"
+                },
+                {
+                  "label": "easeInOutSine",
+                  "value": "easeInOutSine"
+                },
+                {
+                  "label": "easeInExpo",
+                  "value": "easeInExpo"
+                },
+                {
+                  "label": "easeOutExpo",
+                  "value": "easeOutExpo"
+                },
+                {
+                  "label": "easeInOutExpo",
+                  "value": "easeInOutExpo"
+                },
+                {
+                  "label": "easeInCirc",
+                  "value": "easeInCirc"
+                },
+                {
+                  "label": "easeOutCirc",
+                  "value": "easeOutCirc"
+                },
+                {
+                  "label": "easeInOutCirc",
+                  "value": "easeInOutCirc"
+                },
+                {
+                  "label": "easeOutBounce",
+                  "value": "easeOutBounce"
+                },
+                {
+                  "label": "easeInBack",
+                  "value": "easeInBack"
+                },
+                {
+                  "label": "easeOutBack",
+                  "value": "easeOutBack"
+                },
+                {
+                  "label": "easeInOutBack",
+                  "value": "easeInOutBack"
+                },
+                {
+                  "label": "elastic",
+                  "value": "elastic"
+                },
+                {
+                  "label": "swingFromTo",
+                  "value": "swingFromTo"
+                },
+                {
+                  "label": "swingFrom",
+                  "value": "swingFrom"
+                },
+                {
+                  "label": "swingTo",
+                  "value": "swingTo"
+                },
+                {
+                  "label": "bounce",
+                  "value": "bounce"
+                },
+                {
+                  "label": "bouncePast",
+                  "value": "bouncePast"
+                },
+                {
+                  "label": "easeFromTo",
+                  "value": "easeFromTo"
+                },
+                {
+                  "label": "easeFrom",
+                  "value": "easeFrom"
+                },
+                {
+                  "label": "easeTo",
+                  "value": "easeTo"
+                }
               ],
               "name": "FadeInEasing"
             },
@@ -23650,40 +23790,139 @@
               "type": "Choice",
               "label": "Fade-out easing",
               "group": "Speed",
-              "extraInformation": [
-                "linear",
-                "easeInQuad",
-                "easeOutQuad",
-                "easeInOutQuad",
-                "easeInCubic",
-                "easeOutCubic",
-                "easeInOutCubic",
-                "easeInQuart",
-                "easeOutQuart",
-                "easeInOutQuart",
-                "easeInQuint",
-                "easeOutQuint",
-                "easeInOutQuint",
-                "easeInOutSine",
-                "easeInExpo",
-                "easeOutExpo",
-                "easeInOutExpo",
-                "easeInCirc",
-                "easeOutCirc",
-                "easeInOutCirc",
-                "easeOutBounce",
-                "easeInBack",
-                "easeOutBack",
-                "easeInOutBack",
-                "elastic",
-                "swingFromTo",
-                "swingFrom",
-                "swingTo",
-                "bounce",
-                "bouncePast",
-                "easeFromTo",
-                "easeFrom",
-                "easeTo"
+              "choices": [
+                {
+                  "label": "linear",
+                  "value": "linear"
+                },
+                {
+                  "label": "easeInQuad",
+                  "value": "easeInQuad"
+                },
+                {
+                  "label": "easeOutQuad",
+                  "value": "easeOutQuad"
+                },
+                {
+                  "label": "easeInOutQuad",
+                  "value": "easeInOutQuad"
+                },
+                {
+                  "label": "easeInCubic",
+                  "value": "easeInCubic"
+                },
+                {
+                  "label": "easeOutCubic",
+                  "value": "easeOutCubic"
+                },
+                {
+                  "label": "easeInOutCubic",
+                  "value": "easeInOutCubic"
+                },
+                {
+                  "label": "easeInQuart",
+                  "value": "easeInQuart"
+                },
+                {
+                  "label": "easeOutQuart",
+                  "value": "easeOutQuart"
+                },
+                {
+                  "label": "easeInOutQuart",
+                  "value": "easeInOutQuart"
+                },
+                {
+                  "label": "easeInQuint",
+                  "value": "easeInQuint"
+                },
+                {
+                  "label": "easeOutQuint",
+                  "value": "easeOutQuint"
+                },
+                {
+                  "label": "easeInOutQuint",
+                  "value": "easeInOutQuint"
+                },
+                {
+                  "label": "easeInOutSine",
+                  "value": "easeInOutSine"
+                },
+                {
+                  "label": "easeInExpo",
+                  "value": "easeInExpo"
+                },
+                {
+                  "label": "easeOutExpo",
+                  "value": "easeOutExpo"
+                },
+                {
+                  "label": "easeInOutExpo",
+                  "value": "easeInOutExpo"
+                },
+                {
+                  "label": "easeInCirc",
+                  "value": "easeInCirc"
+                },
+                {
+                  "label": "easeOutCirc",
+                  "value": "easeOutCirc"
+                },
+                {
+                  "label": "easeInOutCirc",
+                  "value": "easeInOutCirc"
+                },
+                {
+                  "label": "easeOutBounce",
+                  "value": "easeOutBounce"
+                },
+                {
+                  "label": "easeInBack",
+                  "value": "easeInBack"
+                },
+                {
+                  "label": "easeOutBack",
+                  "value": "easeOutBack"
+                },
+                {
+                  "label": "easeInOutBack",
+                  "value": "easeInOutBack"
+                },
+                {
+                  "label": "elastic",
+                  "value": "elastic"
+                },
+                {
+                  "label": "swingFromTo",
+                  "value": "swingFromTo"
+                },
+                {
+                  "label": "swingFrom",
+                  "value": "swingFrom"
+                },
+                {
+                  "label": "swingTo",
+                  "value": "swingTo"
+                },
+                {
+                  "label": "bounce",
+                  "value": "bounce"
+                },
+                {
+                  "label": "bouncePast",
+                  "value": "bouncePast"
+                },
+                {
+                  "label": "easeFromTo",
+                  "value": "easeFromTo"
+                },
+                {
+                  "label": "easeFrom",
+                  "value": "easeFrom"
+                },
+                {
+                  "label": "easeTo",
+                  "value": "easeTo"
+                }
               ],
               "name": "FadeOutEasing"
             },
@@ -23707,10 +23946,19 @@
               "value": "Idle",
               "type": "Choice",
               "label": "",
-              "extraInformation": [
-                "Idle",
-                "Focused",
-                "Pressed"
+              "choices": [
+                {
+                  "label": "Idle",
+                  "value": "Idle"
+                },
+                {
+                  "label": "Focused",
+                  "value": "Focused"
+                },
+                {
+                  "label": "Pressed",
+                  "value": "Pressed"
+                }
               ],
               "hidden": true,
               "name": "PreviousState"
@@ -23740,10 +23988,19 @@
               "value": "NoTween",
               "type": "Choice",
               "label": "",
-              "extraInformation": [
-                "NoTween",
-                "FadeIn",
-                "FadeOut"
+              "choices": [
+                {
+                  "label": "NoTween",
+                  "value": "NoTween"
+                },
+                {
+                  "label": "FadeIn",
+                  "value": "FadeIn"
+                },
+                {
+                  "label": "FadeOut",
+                  "value": "FadeOut"
+                }
               ],
               "hidden": true,
               "name": "TweenState"
@@ -24698,6 +24955,7 @@
               "extraInformation": [
                 "ScalableCapability::ScalableBehavior"
               ],
+              "choices": [],
               "name": "Scale"
             },
             {
@@ -24707,6 +24965,7 @@
               "extraInformation": [
                 "ButtonStates::ButtonFSM"
               ],
+              "choices": [],
               "name": "ButtonFSM"
             },
             {
@@ -24716,6 +24975,7 @@
               "extraInformation": [
                 "Tween::TweenBehavior"
               ],
+              "choices": [],
               "name": "Tween"
             },
             {
@@ -24764,40 +25024,139 @@
               "type": "Choice",
               "label": "Fade-in easing",
               "group": "Speed",
-              "extraInformation": [
-                "linear",
-                "easeInQuad",
-                "easeOutQuad",
-                "easeInOutQuad",
-                "easeInCubic",
-                "easeOutCubic",
-                "easeInOutCubic",
-                "easeInQuart",
-                "easeOutQuart",
-                "easeInOutQuart",
-                "easeInQuint",
-                "easeOutQuint",
-                "easeInOutQuint",
-                "easeInOutSine",
-                "easeInExpo",
-                "easeOutExpo",
-                "easeInOutExpo",
-                "easeInCirc",
-                "easeOutCirc",
-                "easeInOutCirc",
-                "easeOutBounce",
-                "easeInBack",
-                "easeOutBack",
-                "easeInOutBack",
-                "elastic",
-                "swingFromTo",
-                "swingFrom",
-                "swingTo",
-                "bounce",
-                "bouncePast",
-                "easeFromTo",
-                "easeFrom",
-                "easeTo"
+              "choices": [
+                {
+                  "label": "linear",
+                  "value": "linear"
+                },
+                {
+                  "label": "easeInQuad",
+                  "value": "easeInQuad"
+                },
+                {
+                  "label": "easeOutQuad",
+                  "value": "easeOutQuad"
+                },
+                {
+                  "label": "easeInOutQuad",
+                  "value": "easeInOutQuad"
+                },
+                {
+                  "label": "easeInCubic",
+                  "value": "easeInCubic"
+                },
+                {
+                  "label": "easeOutCubic",
+                  "value": "easeOutCubic"
+                },
+                {
+                  "label": "easeInOutCubic",
+                  "value": "easeInOutCubic"
+                },
+                {
+                  "label": "easeInQuart",
+                  "value": "easeInQuart"
+                },
+                {
+                  "label": "easeOutQuart",
+                  "value": "easeOutQuart"
+                },
+                {
+                  "label": "easeInOutQuart",
+                  "value": "easeInOutQuart"
+                },
+                {
+                  "label": "easeInQuint",
+                  "value": "easeInQuint"
+                },
+                {
+                  "label": "easeOutQuint",
+                  "value": "easeOutQuint"
+                },
+                {
+                  "label": "easeInOutQuint",
+                  "value": "easeInOutQuint"
+                },
+                {
+                  "label": "easeInOutSine",
+                  "value": "easeInOutSine"
+                },
+                {
+                  "label": "easeInExpo",
+                  "value": "easeInExpo"
+                },
+                {
+                  "label": "easeOutExpo",
+                  "value": "easeOutExpo"
+                },
+                {
+                  "label": "easeInOutExpo",
+                  "value": "easeInOutExpo"
+                },
+                {
+                  "label": "easeInCirc",
+                  "value": "easeInCirc"
+                },
+                {
+                  "label": "easeOutCirc",
+                  "value": "easeOutCirc"
+                },
+                {
+                  "label": "easeInOutCirc",
+                  "value": "easeInOutCirc"
+                },
+                {
+                  "label": "easeOutBounce",
+                  "value": "easeOutBounce"
+                },
+                {
+                  "label": "easeInBack",
+                  "value": "easeInBack"
+                },
+                {
+                  "label": "easeOutBack",
+                  "value": "easeOutBack"
+                },
+                {
+                  "label": "easeInOutBack",
+                  "value": "easeInOutBack"
+                },
+                {
+                  "label": "elastic",
+                  "value": "elastic"
+                },
+                {
+                  "label": "swingFromTo",
+                  "value": "swingFromTo"
+                },
+                {
+                  "label": "swingFrom",
+                  "value": "swingFrom"
+                },
+                {
+                  "label": "swingTo",
+                  "value": "swingTo"
+                },
+                {
+                  "label": "bounce",
+                  "value": "bounce"
+                },
+                {
+                  "label": "bouncePast",
+                  "value": "bouncePast"
+                },
+                {
+                  "label": "easeFromTo",
+                  "value": "easeFromTo"
+                },
+                {
+                  "label": "easeFrom",
+                  "value": "easeFrom"
+                },
+                {
+                  "label": "easeTo",
+                  "value": "easeTo"
+                }
               ],
               "name": "FadeInEasing"
             },
@@ -24806,40 +25165,139 @@
               "type": "Choice",
               "label": "Fade-out easing",
               "group": "Speed",
-              "extraInformation": [
-                "linear",
-                "easeInQuad",
-                "easeOutQuad",
-                "easeInOutQuad",
-                "easeInCubic",
-                "easeOutCubic",
-                "easeInOutCubic",
-                "easeInQuart",
-                "easeOutQuart",
-                "easeInOutQuart",
-                "easeInQuint",
-                "easeOutQuint",
-                "easeInOutQuint",
-                "easeInOutSine",
-                "easeInExpo",
-                "easeOutExpo",
-                "easeInOutExpo",
-                "easeInCirc",
-                "easeOutCirc",
-                "easeInOutCirc",
-                "easeOutBounce",
-                "easeInBack",
-                "easeOutBack",
-                "easeInOutBack",
-                "elastic",
-                "swingFromTo",
-                "swingFrom",
-                "swingTo",
-                "bounce",
-                "bouncePast",
-                "easeFromTo",
-                "easeFrom",
-                "easeTo"
+              "choices": [
+                {
+                  "label": "linear",
+                  "value": "linear"
+                },
+                {
+                  "label": "easeInQuad",
+                  "value": "easeInQuad"
+                },
+                {
+                  "label": "easeOutQuad",
+                  "value": "easeOutQuad"
+                },
+                {
+                  "label": "easeInOutQuad",
+                  "value": "easeInOutQuad"
+                },
+                {
+                  "label": "easeInCubic",
+                  "value": "easeInCubic"
+                },
+                {
+                  "label": "easeOutCubic",
+                  "value": "easeOutCubic"
+                },
+                {
+                  "label": "easeInOutCubic",
+                  "value": "easeInOutCubic"
+                },
+                {
+                  "label": "easeInQuart",
+                  "value": "easeInQuart"
+                },
+                {
+                  "label": "easeOutQuart",
+                  "value": "easeOutQuart"
+                },
+                {
+                  "label": "easeInOutQuart",
+                  "value": "easeInOutQuart"
+                },
+                {
+                  "label": "easeInQuint",
+                  "value": "easeInQuint"
+                },
+                {
+                  "label": "easeOutQuint",
+                  "value": "easeOutQuint"
+                },
+                {
+                  "label": "easeInOutQuint",
+                  "value": "easeInOutQuint"
+                },
+                {
+                  "label": "easeInOutSine",
+                  "value": "easeInOutSine"
+                },
+                {
+                  "label": "easeInExpo",
+                  "value": "easeInExpo"
+                },
+                {
+                  "label": "easeOutExpo",
+                  "value": "easeOutExpo"
+                },
+                {
+                  "label": "easeInOutExpo",
+                  "value": "easeInOutExpo"
+                },
+                {
+                  "label": "easeInCirc",
+                  "value": "easeInCirc"
+                },
+                {
+                  "label": "easeOutCirc",
+                  "value": "easeOutCirc"
+                },
+                {
+                  "label": "easeInOutCirc",
+                  "value": "easeInOutCirc"
+                },
+                {
+                  "label": "easeOutBounce",
+                  "value": "easeOutBounce"
+                },
+                {
+                  "label": "easeInBack",
+                  "value": "easeInBack"
+                },
+                {
+                  "label": "easeOutBack",
+                  "value": "easeOutBack"
+                },
+                {
+                  "label": "easeInOutBack",
+                  "value": "easeInOutBack"
+                },
+                {
+                  "label": "elastic",
+                  "value": "elastic"
+                },
+                {
+                  "label": "swingFromTo",
+                  "value": "swingFromTo"
+                },
+                {
+                  "label": "swingFrom",
+                  "value": "swingFrom"
+                },
+                {
+                  "label": "swingTo",
+                  "value": "swingTo"
+                },
+                {
+                  "label": "bounce",
+                  "value": "bounce"
+                },
+                {
+                  "label": "bouncePast",
+                  "value": "bouncePast"
+                },
+                {
+                  "label": "easeFromTo",
+                  "value": "easeFromTo"
+                },
+                {
+                  "label": "easeFrom",
+                  "value": "easeFrom"
+                },
+                {
+                  "label": "easeTo",
+                  "value": "easeTo"
+                }
               ],
               "name": "FadeOutEasing"
             },
@@ -24847,10 +25305,19 @@
               "value": "Idle",
               "type": "Choice",
               "label": "",
-              "extraInformation": [
-                "Idle",
-                "Focused",
-                "Pressed"
+              "choices": [
+                {
+                  "label": "Idle",
+                  "value": "Idle"
+                },
+                {
+                  "label": "Focused",
+                  "value": "Focused"
+                },
+                {
+                  "label": "Pressed",
+                  "value": "Pressed"
+                }
               ],
               "hidden": true,
               "name": "PreviousState"
@@ -25812,6 +26279,7 @@
               "extraInformation": [
                 "ButtonStates::ButtonFSM"
               ],
+              "choices": [],
               "name": "ButtonFSM"
             },
             {
@@ -25821,6 +26289,7 @@
               "extraInformation": [
                 "Tween::TweenBehavior"
               ],
+              "choices": [],
               "name": "Tween"
             },
             {
@@ -25866,40 +26335,139 @@
               "type": "Choice",
               "label": "Fade-in easing",
               "group": "Speed",
-              "extraInformation": [
-                "linear",
-                "easeInQuad",
-                "easeOutQuad",
-                "easeInOutQuad",
-                "easeInCubic",
-                "easeOutCubic",
-                "easeInOutCubic",
-                "easeInQuart",
-                "easeOutQuart",
-                "easeInOutQuart",
-                "easeInQuint",
-                "easeOutQuint",
-                "easeInOutQuint",
-                "easeInOutSine",
-                "easeInExpo",
-                "easeOutExpo",
-                "easeInOutExpo",
-                "easeInCirc",
-                "easeOutCirc",
-                "easeInOutCirc",
-                "easeOutBounce",
-                "easeInBack",
-                "easeOutBack",
-                "easeInOutBack",
-                "elastic",
-                "swingFromTo",
-                "swingFrom",
-                "swingTo",
-                "bounce",
-                "bouncePast",
-                "easeFromTo",
-                "easeFrom",
-                "easeTo"
+              "choices": [
+                {
+                  "label": "linear",
+                  "value": "linear"
+                },
+                {
+                  "label": "easeInQuad",
+                  "value": "easeInQuad"
+                },
+                {
+                  "label": "easeOutQuad",
+                  "value": "easeOutQuad"
+                },
+                {
+                  "label": "easeInOutQuad",
+                  "value": "easeInOutQuad"
+                },
+                {
+                  "label": "easeInCubic",
+                  "value": "easeInCubic"
+                },
+                {
+                  "label": "easeOutCubic",
+                  "value": "easeOutCubic"
+                },
+                {
+                  "label": "easeInOutCubic",
+                  "value": "easeInOutCubic"
+                },
+                {
+                  "label": "easeInQuart",
+                  "value": "easeInQuart"
+                },
+                {
+                  "label": "easeOutQuart",
+                  "value": "easeOutQuart"
+                },
+                {
+                  "label": "easeInOutQuart",
+                  "value": "easeInOutQuart"
+                },
+                {
+                  "label": "easeInQuint",
+                  "value": "easeInQuint"
+                },
+                {
+                  "label": "easeOutQuint",
+                  "value": "easeOutQuint"
+                },
+                {
+                  "label": "easeInOutQuint",
+                  "value": "easeInOutQuint"
+                },
+                {
+                  "label": "easeInOutSine",
+                  "value": "easeInOutSine"
+                },
+                {
+                  "label": "easeInExpo",
+                  "value": "easeInExpo"
+                },
+                {
+                  "label": "easeOutExpo",
+                  "value": "easeOutExpo"
+                },
+                {
+                  "label": "easeInOutExpo",
+                  "value": "easeInOutExpo"
+                },
+                {
+                  "label": "easeInCirc",
+                  "value": "easeInCirc"
+                },
+                {
+                  "label": "easeOutCirc",
+                  "value": "easeOutCirc"
+                },
+                {
+                  "label": "easeInOutCirc",
+                  "value": "easeInOutCirc"
+                },
+                {
+                  "label": "easeOutBounce",
+                  "value": "easeOutBounce"
+                },
+                {
+                  "label": "easeInBack",
+                  "value": "easeInBack"
+                },
+                {
+                  "label": "easeOutBack",
+                  "value": "easeOutBack"
+                },
+                {
+                  "label": "easeInOutBack",
+                  "value": "easeInOutBack"
+                },
+                {
+                  "label": "elastic",
+                  "value": "elastic"
+                },
+                {
+                  "label": "swingFromTo",
+                  "value": "swingFromTo"
+                },
+                {
+                  "label": "swingFrom",
+                  "value": "swingFrom"
+                },
+                {
+                  "label": "swingTo",
+                  "value": "swingTo"
+                },
+                {
+                  "label": "bounce",
+                  "value": "bounce"
+                },
+                {
+                  "label": "bouncePast",
+                  "value": "bouncePast"
+                },
+                {
+                  "label": "easeFromTo",
+                  "value": "easeFromTo"
+                },
+                {
+                  "label": "easeFrom",
+                  "value": "easeFrom"
+                },
+                {
+                  "label": "easeTo",
+                  "value": "easeTo"
+                }
               ],
               "name": "FadeInEasing"
             },
@@ -25908,40 +26476,139 @@
               "type": "Choice",
               "label": "Fade-out easing",
               "group": "Speed",
-              "extraInformation": [
-                "linear",
-                "easeInQuad",
-                "easeOutQuad",
-                "easeInOutQuad",
-                "easeInCubic",
-                "easeOutCubic",
-                "easeInOutCubic",
-                "easeInQuart",
-                "easeOutQuart",
-                "easeInOutQuart",
-                "easeInQuint",
-                "easeOutQuint",
-                "easeInOutQuint",
-                "easeInOutSine",
-                "easeInExpo",
-                "easeOutExpo",
-                "easeInOutExpo",
-                "easeInCirc",
-                "easeOutCirc",
-                "easeInOutCirc",
-                "easeOutBounce",
-                "easeInBack",
-                "easeOutBack",
-                "easeInOutBack",
-                "elastic",
-                "swingFromTo",
-                "swingFrom",
-                "swingTo",
-                "bounce",
-                "bouncePast",
-                "easeFromTo",
-                "easeFrom",
-                "easeTo"
+              "choices": [
+                {
+                  "label": "linear",
+                  "value": "linear"
+                },
+                {
+                  "label": "easeInQuad",
+                  "value": "easeInQuad"
+                },
+                {
+                  "label": "easeOutQuad",
+                  "value": "easeOutQuad"
+                },
+                {
+                  "label": "easeInOutQuad",
+                  "value": "easeInOutQuad"
+                },
+                {
+                  "label": "easeInCubic",
+                  "value": "easeInCubic"
+                },
+                {
+                  "label": "easeOutCubic",
+                  "value": "easeOutCubic"
+                },
+                {
+                  "label": "easeInOutCubic",
+                  "value": "easeInOutCubic"
+                },
+                {
+                  "label": "easeInQuart",
+                  "value": "easeInQuart"
+                },
+                {
+                  "label": "easeOutQuart",
+                  "value": "easeOutQuart"
+                },
+                {
+                  "label": "easeInOutQuart",
+                  "value": "easeInOutQuart"
+                },
+                {
+                  "label": "easeInQuint",
+                  "value": "easeInQuint"
+                },
+                {
+                  "label": "easeOutQuint",
+                  "value": "easeOutQuint"
+                },
+                {
+                  "label": "easeInOutQuint",
+                  "value": "easeInOutQuint"
+                },
+                {
+                  "label": "easeInOutSine",
+                  "value": "easeInOutSine"
+                },
+                {
+                  "label": "easeInExpo",
+                  "value": "easeInExpo"
+                },
+                {
+                  "label": "easeOutExpo",
+                  "value": "easeOutExpo"
+                },
+                {
+                  "label": "easeInOutExpo",
+                  "value": "easeInOutExpo"
+                },
+                {
+                  "label": "easeInCirc",
+                  "value": "easeInCirc"
+                },
+                {
+                  "label": "easeOutCirc",
+                  "value": "easeOutCirc"
+                },
+                {
+                  "label": "easeInOutCirc",
+                  "value": "easeInOutCirc"
+                },
+                {
+                  "label": "easeOutBounce",
+                  "value": "easeOutBounce"
+                },
+                {
+                  "label": "easeInBack",
+                  "value": "easeInBack"
+                },
+                {
+                  "label": "easeOutBack",
+                  "value": "easeOutBack"
+                },
+                {
+                  "label": "easeInOutBack",
+                  "value": "easeInOutBack"
+                },
+                {
+                  "label": "elastic",
+                  "value": "elastic"
+                },
+                {
+                  "label": "swingFromTo",
+                  "value": "swingFromTo"
+                },
+                {
+                  "label": "swingFrom",
+                  "value": "swingFrom"
+                },
+                {
+                  "label": "swingTo",
+                  "value": "swingTo"
+                },
+                {
+                  "label": "bounce",
+                  "value": "bounce"
+                },
+                {
+                  "label": "bouncePast",
+                  "value": "bouncePast"
+                },
+                {
+                  "label": "easeFromTo",
+                  "value": "easeFromTo"
+                },
+                {
+                  "label": "easeFrom",
+                  "value": "easeFrom"
+                },
+                {
+                  "label": "easeTo",
+                  "value": "easeTo"
+                }
               ],
               "name": "FadeOutEasing"
             },
@@ -25949,10 +26616,19 @@
               "value": "Idle",
               "type": "Choice",
               "label": "",
-              "extraInformation": [
-                "Idle",
-                "Focused",
-                "Pressed"
+              "choices": [
+                {
+                  "label": "Idle",
+                  "value": "Idle"
+                },
+                {
+                  "label": "Focused",
+                  "value": "Focused"
+                },
+                {
+                  "label": "Pressed",
+                  "value": "Pressed"
+                }
               ],
               "hidden": true,
               "name": "PreviousState"
@@ -26596,6 +27272,7 @@
               "extraInformation": [
                 "ScalableCapability::ScalableBehavior"
               ],
+              "choices": [],
               "name": "Scale"
             },
             {
@@ -26605,6 +27282,7 @@
               "extraInformation": [
                 "Tween::TweenBehavior"
               ],
+              "choices": [],
               "name": "TweenBehavior"
             },
             {
@@ -31883,40 +32561,139 @@
               "type": "Choice",
               "label": "Easing",
               "group": "Speed",
-              "extraInformation": [
-                "linear",
-                "easeInQuad",
-                "easeOutQuad",
-                "easeInOutQuad",
-                "easeInCubic",
-                "easeOutCubic",
-                "easeInOutCubic",
-                "easeInQuart",
-                "easeOutQuart",
-                "easeInOutQuart",
-                "easeInQuint",
-                "easeOutQuint",
-                "easeInOutQuint",
-                "easeInOutSine",
-                "easeInExpo",
-                "easeOutExpo",
-                "easeInOutExpo",
-                "easeInCirc",
-                "easeOutCirc",
-                "easeInOutCirc",
-                "easeOutBounce",
-                "easeInBack",
-                "easeOutBack",
-                "easeInOutBack",
-                "elastic",
-                "swingFromTo",
-                "swingFrom",
-                "swingTo",
-                "bounce",
-                "bouncePast",
-                "easeFromTo",
-                "easeFrom",
-                "easeTo"
+              "choices": [
+                {
+                  "label": "linear",
+                  "value": "linear"
+                },
+                {
+                  "label": "easeInQuad",
+                  "value": "easeInQuad"
+                },
+                {
+                  "label": "easeOutQuad",
+                  "value": "easeOutQuad"
+                },
+                {
+                  "label": "easeInOutQuad",
+                  "value": "easeInOutQuad"
+                },
+                {
+                  "label": "easeInCubic",
+                  "value": "easeInCubic"
+                },
+                {
+                  "label": "easeOutCubic",
+                  "value": "easeOutCubic"
+                },
+                {
+                  "label": "easeInOutCubic",
+                  "value": "easeInOutCubic"
+                },
+                {
+                  "label": "easeInQuart",
+                  "value": "easeInQuart"
+                },
+                {
+                  "label": "easeOutQuart",
+                  "value": "easeOutQuart"
+                },
+                {
+                  "label": "easeInOutQuart",
+                  "value": "easeInOutQuart"
+                },
+                {
+                  "label": "easeInQuint",
+                  "value": "easeInQuint"
+                },
+                {
+                  "label": "easeOutQuint",
+                  "value": "easeOutQuint"
+                },
+                {
+                  "label": "easeInOutQuint",
+                  "value": "easeInOutQuint"
+                },
+                {
+                  "label": "easeInOutSine",
+                  "value": "easeInOutSine"
+                },
+                {
+                  "label": "easeInExpo",
+                  "value": "easeInExpo"
+                },
+                {
+                  "label": "easeOutExpo",
+                  "value": "easeOutExpo"
+                },
+                {
+                  "label": "easeInOutExpo",
+                  "value": "easeInOutExpo"
+                },
+                {
+                  "label": "easeInCirc",
+                  "value": "easeInCirc"
+                },
+                {
+                  "label": "easeOutCirc",
+                  "value": "easeOutCirc"
+                },
+                {
+                  "label": "easeInOutCirc",
+                  "value": "easeInOutCirc"
+                },
+                {
+                  "label": "easeOutBounce",
+                  "value": "easeOutBounce"
+                },
+                {
+                  "label": "easeInBack",
+                  "value": "easeInBack"
+                },
+                {
+                  "label": "easeOutBack",
+                  "value": "easeOutBack"
+                },
+                {
+                  "label": "easeInOutBack",
+                  "value": "easeInOutBack"
+                },
+                {
+                  "label": "elastic",
+                  "value": "elastic"
+                },
+                {
+                  "label": "swingFromTo",
+                  "value": "swingFromTo"
+                },
+                {
+                  "label": "swingFrom",
+                  "value": "swingFrom"
+                },
+                {
+                  "label": "swingTo",
+                  "value": "swingTo"
+                },
+                {
+                  "label": "bounce",
+                  "value": "bounce"
+                },
+                {
+                  "label": "bouncePast",
+                  "value": "bouncePast"
+                },
+                {
+                  "label": "easeFromTo",
+                  "value": "easeFromTo"
+                },
+                {
+                  "label": "easeFrom",
+                  "value": "easeFrom"
+                },
+                {
+                  "label": "easeTo",
+                  "value": "easeTo"
+                }
               ],
               "name": "Easing"
             },
@@ -31924,11 +32701,23 @@
               "value": "Top-left corner",
               "type": "Choice",
               "label": "Initial position",
-              "extraInformation": [
-                "Top-left corner",
-                "Top-right corner",
-                "Bottom-right corner",
-                "Bottom-left corner"
+              "choices": [
+                {
+                  "label": "Top-left corner",
+                  "value": "Top-left corner"
+                },
+                {
+                  "label": "Top-right corner",
+                  "value": "Top-right corner"
+                },
+                {
+                  "label": "Bottom-right corner",
+                  "value": "Bottom-right corner"
+                },
+                {
+                  "label": "Bottom-left corner",
+                  "value": "Bottom-left corner"
+                }
               ],
               "name": "InitialPosition"
             },
@@ -43501,6 +44290,7 @@
               "extraInformation": [
                 "ScalableCapability::ScalableBehavior"
               ],
+              "choices": [],
               "name": "Scale"
             }
           ],
@@ -47328,9 +48118,15 @@
               "type": "Choice",
               "label": "Thumb shape",
               "group": "Thumb",
-              "extraInformation": [
-                "circle",
-                "rectangle"
+              "choices": [
+                {
+                  "label": "circle",
+                  "value": "circle"
+                },
+                {
+                  "label": "rectangle",
+                  "value": "rectangle"
+                }
               ],
               "name": "ThumbShape"
             },
@@ -49079,12 +49875,27 @@
               "value": "Idle",
               "type": "Choice",
               "label": "State",
-              "extraInformation": [
-                "Idle",
-                "Hovered",
-                "PressedInside",
-                "PressedOutside",
-                "Validated"
+              "choices": [
+                {
+                  "label": "Idle",
+                  "value": "Idle"
+                },
+                {
+                  "label": "Hovered",
+                  "value": "Hovered"
+                },
+                {
+                  "label": "PressedInside",
+                  "value": "PressedInside"
+                },
+                {
+                  "label": "PressedOutside",
+                  "value": "PressedOutside"
+                },
+                {
+                  "label": "Validated",
+                  "value": "Validated"
+                }
               ],
               "hidden": true,
               "name": "State"
@@ -49175,6 +49986,7 @@
                 "textAlignment": "",
                 "verticalTextAlignment": "top",
                 "characterSize": 20,
+                "lineHeight": 0,
                 "color": "245;166;35"
               }
             },
@@ -49382,6 +50194,7 @@
               "initialVariables": []
             }
           ],
+          "editionSettings": {},
           "eventsFunctions": [
             {
               "fullName": "",
@@ -50989,6 +51802,7 @@
                 "Label",
                 "FillBar"
               ],
+              "choices": [],
               "hidden": true,
               "name": "BarLeftPadding"
             },
@@ -51001,6 +51815,7 @@
                 "Label",
                 "FillBar"
               ],
+              "choices": [],
               "hidden": true,
               "name": "BarTopPadding"
             },
@@ -51013,6 +51828,7 @@
                 "Label",
                 "FillBar"
               ],
+              "choices": [],
               "hidden": true,
               "name": "BarRightPadding"
             },
@@ -51025,6 +51841,7 @@
                 "Label",
                 "FillBar"
               ],
+              "choices": [],
               "hidden": true,
               "name": "BarBottomPadding"
             },
@@ -51091,6 +51908,7 @@
               "extraInformation": [
                 "Thumb"
               ],
+              "choices": [],
               "hidden": true,
               "name": "ThumbAnchorOrigin"
             },
@@ -51102,6 +51920,7 @@
               "extraInformation": [
                 "FillBar"
               ],
+              "choices": [],
               "hidden": true,
               "name": "ThumbAnchorTarget"
             },
@@ -51113,6 +51932,7 @@
               "extraInformation": [
                 "Label"
               ],
+              "choices": [],
               "hidden": true,
               "name": "ShowLabel"
             },
@@ -51187,6 +52007,7 @@
                     "textAlignment": "",
                     "verticalTextAlignment": "top",
                     "characterSize": 20,
+                    "lineHeight": 0,
                     "color": "0;0;0"
                   }
                 },
@@ -51392,7 +52213,8 @@
                   "stringProperties": [],
                   "initialVariables": []
                 }
-              ]
+              ],
+              "editionSettings": {}
             }
           ]
         }
@@ -52044,6 +52866,230 @@
           "sharedPropertyDescriptors": []
         }
       ],
+      "eventsBasedObjects": []
+    },
+    {
+      "author": "",
+      "category": "User interface",
+      "extensionNamespace": "",
+      "fullName": "Pop-up",
+      "gdevelopVersion": ">=5.5.222",
+      "helpPath": "",
+      "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLW1lc3NhZ2UtYWxlcnQiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTMgMTFIMTFWNUgxM00xMyAxNUgxMVYxM0gxM00yMCAySDRDMi45IDIgMiAyLjkgMiA0VjIyTDYgMThIMjBDMjEuMSAxOCAyMiAxNy4xIDIyIDE2VjRDMjIgMi45IDIxLjEgMiAyMCAyWiIgLz48L3N2Zz4=",
+      "name": "PopUp",
+      "previewIconUrl": "https://resources.gdevelop-app.com/assets/Icons/message-alert.svg",
+      "shortDescription": "Display pop-ups to alert, ask confirmation, and let user type a response in text box.",
+      "version": "1.0.0",
+      "description": [
+        "This extension adds actions to display three kinds of pop-ups.",
+        "",
+        "## Alert",
+        " - Pops-up a message that will pause the game until dismissed by the player.",
+        "",
+        "## Confirmation",
+        " - Pops-up a dialogue containing a message with the option to either confirm or cancel.",
+        "",
+        "## Prompt",
+        "**Note that this pop-up type is unsupported on previews and PC exports.**",
+        " - Displays a message to the player with a text field to write an answer in. The player will also have the option to either confirm or discard their input.",
+        ""
+      ],
+      "origin": {
+        "identifier": "PopUp",
+        "name": "gdevelop-extension-store"
+      },
+      "tags": [
+        "pop up",
+        "alert",
+        "message",
+        "prompt",
+        "confirm",
+        "dialog"
+      ],
+      "authorIds": [
+        "HBp2oDKV87gKFbdd1wyV1jRYRC13",
+        "2OwwM8ToR9dx9RJ2sAKTcrLmCB92",
+        "ZgrsWuRTAkXgeuPV9bo0zuEcA2w1"
+      ],
+      "dependencies": [],
+      "globalVariables": [],
+      "sceneVariables": [],
+      "eventsFunctions": [
+        {
+          "description": "The response to a pop-up message is filled.",
+          "fullName": "Existing prompt response",
+          "functionType": "Condition",
+          "name": "PromptValidResponse",
+          "sentence": "Response from the pop-up prompt is filled",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const promptResponse = runtimeScene.getVariables().get(\"__PopUp\").getChild(\"Prompt\").getAsString();",
+                "eventsFunctionContext.returnValue = promptResponse !== \"\";",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Return the text response by user to prompt.",
+          "fullName": "Response to prompt",
+          "functionType": "StringExpression",
+          "name": "PromptResponse",
+          "sentence": "Open prompt with message : _PARAM1_ with ID: _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "eventsFunctionContext.returnValue = runtimeScene.getVariables().get(\"__PopUp\").getChild(\"Prompt\").getAsString();\r",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "string"
+          },
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Displays a prompt in a pop-up that prompts the user for input. This action return the text input or the false boolean if canceled.",
+          "fullName": "Prompt",
+          "functionType": "Action",
+          "group": "Web browsers",
+          "name": "Prompt",
+          "sentence": "Open a prompt pop-up box with message: _PARAM1_ (placeholder: _PARAM2_)",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const message = eventsFunctionContext.getArgument(\"Message\");",
+                "const defaultText = eventsFunctionContext.getArgument(\"DefaultText\");",
+                "",
+                "const response = prompt(message, defaultText);",
+                "runtimeScene",
+                "    .getVariables()",
+                "    .get(\"__PopUp\")",
+                "    .getChild(\"Prompt\")",
+                "    .setString(response || \"\");",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Prompt message",
+              "name": "Message",
+              "type": "string"
+            },
+            {
+              "description": "Input placeholder",
+              "name": "DefaultText",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Ask confirmation of user with a message in a dialog box with an OK button, and a Cancel button.",
+          "fullName": "Confirm",
+          "functionType": "Action",
+          "name": "Confirm",
+          "sentence": "Open a confirmation pop-up box with message: _PARAM1_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const isConfirmed = confirm(eventsFunctionContext.getArgument(\"Message\"));",
+                "runtimeScene",
+                "    .getVariables()",
+                "    .get(\"__PopUp\")",
+                "    .getChild(\"Confirm\")",
+                "    .setBoolean(isConfirmed);",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Confirmation message",
+              "longDescription": "The text to display in the confirm box.",
+              "name": "Message",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Check if a confirmation was accepted.",
+          "fullName": "Pop-up message confirmed",
+          "functionType": "Condition",
+          "name": "ConfimationResponse",
+          "sentence": "Pop-up message is confirmed",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "eventsFunctionContext.returnValue = runtimeScene.getVariables().get(\"__PopUp\").getChild(\"Confirm\").getAsBoolean();\r",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": []
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Displays an alert box with a message and an OK button in a pop-up window.",
+          "fullName": "Alert",
+          "functionType": "Action",
+          "name": "Alert",
+          "sentence": "Open an alert pop-up box with message: _PARAM1_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "alert(eventsFunctionContext.getArgument(\"Message\"));\r",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Alert message",
+              "name": "Message",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "eventsBasedBehaviors": [],
       "eventsBasedObjects": []
     }
   ],
